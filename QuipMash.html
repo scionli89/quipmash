@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>QUIPMASH</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana; /*Or Arial*/
+}
+
+/* Style the header */
+header {
+  background-color: #940F0F;
+  padding: 5px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  <!--height: 100px;-->
+}
+
+/* Style the footer */
+footer {
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+  color: Black;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, td, th {
+  border: 1px solid black;
+}
+
+th {
+    background-color: black;
+    color: white;
+} 
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h2><strong>QuipMash</strong></h2>
+</header>
+<h3 style="text-align:center">Are dad jokes lame? No. Will we be judged by them? Yes.</h3>
+<h1 style="text-align:center">Which is Funnier? Click to Choose.</h1>
+
+<table style="width:40%" class="center">
+
+  <tr>
+    <th width=45%>Joke 1</th>
+    <th width=10%></th>
+	<th width=45%>Joke 2</th>
+  </tr>
+
+  <tr>
+    <td style="text-align:center;padding:20px"><strong><div id="joke1" onclick="myFunction()"><strong>Joke 1</strong></div></strong></br><button onclick="myFunction()">This one</button></td>
+    <td style="text-align:center" >OR</td>
+    <td style="text-align:center;padding:20px"><strong><div id="joke2" onclick="myFunction2()">Joke 2</div></strong></br><button onclick="myFunction2()">This one</button></td>
+  </tr>
+</table>
+<br>
+<h3 style="text-align:center">Previous Jokes</h3>
+
+<table style="width:40%" class="center">
+
+  <tr>
+    <th width=45%>Previous Joke 1</th>
+    <th width=10%></th>
+	<th width=45%>Previous Joke 2</th>
+  </tr>
+
+  <tr>
+    <td style="text-align:center;padding:20px"><strong><div id="prev1"><strong>Click the funnier joke above to get started</strong></div></strong></td>
+    <strong><td style="text-align:center"><strong><div id = "winner">vs.</div></strong></td></strong>
+    <td style="text-align:center;padding:20px"><strong><div id="prev2">Click the funnier joke above to get started</div></strong></td>
+  </tr>
+</table>
+
+
+<br>
+<h3 style="text-align:center">Winners</h3>
+
+<div id="container" style="text-align:center" class="center"></div>
+<br>
+<!--<div id="target-table" style="text-align:center;" class = "center"></div>*/-->
+<button onclick="clearTable()" style="text-align:center" class="center">Clear Table</button>
+
+<script>
+
+//var jokes = ["'Dad, did you get a haircut?' 'No, I got them all cut!'","My wife is really mad at the fact that I have no sense of direction. So I packed up my stuff and right!","How do you get a squirrel to like you? Act like a nut.","Why don't eggs tell jokes? They'd crack each other up.","I don't trust stairs. They're always up to something.","What do you call someone with no body and no nose? Nobody knows.","Did you hear the rumor about butter? Well, I'm not going to spread it!","Why couldn't the bicycle stand up by itself? It was two tired.","Dad, can you put my shoes on?' 'No, I don't think they'll fit me.","Why can't a nose be 12 inches long? Because then it would be a foot.","This graveyard looks overcrowded. People must be dying to get in.","Dad, can you put the cat out?' 'I didn't know it was on fire.","What time did the man go to the dentist? Tooth hurt-y.","How many tickles does it take to make an octopus laugh? Ten tickles.","What concert costs just 45 cents? 50 Cent featuring Nickelback!","How do you make a tissue dance? You put a little boogie in it.","Why did the math book look so sad? Because of all of its problems!","What do you call cheese that isn't yours? Nacho cheese.","What kind of shoes do ninjas wear? Sneakers!","How does a penguin build its house? Igloos it together.","Why did the scarecrow win an award? Because he was outstanding in his field.","I made a pencil with two erasers. It was pointless.","How do you make a Kleenex dance? Put a little boogie in it!","I'm reading a book about anti-gravity. It's impossible to put down!","Did you hear about the guy who invented the knock-knock joke? He won the 'no-bell' prize.","I've got a great joke about construction, but I'm still working on it.","I used to hate facial hair...but then it grew on me.","I decided to sell my vacuum cleaner—it was just gathering dust!","I had a neck brace fitted years ago and I've never looked back since.","You know, people say they pick their nose, but I feel like I was just born with mine.","What's brown and sticky? A stick.","Why can't you hear a psychiatrist using the bathroom? Because the 'P' is silent.","What do you call an elephant that doesn't matter? An irrelephant.","What do you get from a pampered cow? Spoiled milk.","I like telling Dad jokes. Sometimes he laughs!","Did I tell you the time I fell in love during a backflip? I was heels over head!","If a child refuses to sleep during nap time, are they guilty of resisting a rest?","I ordered a chicken and an egg online. I’ll let you know.","It takes guts to be an organ donor.","If you see a crime at an Apple Store, does that make you an iWitness?","I'm so good at sleeping, I can do it with my eyes closed!","It's inappropriate to make a 'dad joke' if you're not a dad. It's a faux pa.","Did you hear about the circus fire? It was in tents.","Can February March? No, but April May!","How do lawyers say goodbye? We'll be suing ya!","Wanna hear a joke about paper? Never mind—it's tearable.","What's the best way to watch a fly fishing tournament? Live stream.","Spring is here! I got so excited I wet my plants.","I could tell a joke about pizza, but it's a little cheesy.","Don't trust atoms. They make up everything!","When does a joke become a dad joke? When it becomes apparent.","I wouldn't buy anything with velcro. It's a total rip-off.","What’s an astronaut’s favorite part of a computer? The space bar.","I don't play soccer because I enjoy the sport. I'm just doing it for kicks!","Why are elevator jokes so classic and good? They work on many levels.","Why do bees have sticky hair? Because they use a honeycomb.","What do you call a fake noodle? An impasta.","Which state has the most streets? Rhode Island.","What did the coffee report to the police? A mugging."]
+var jokes = [["Dad, did you get a haircut? No, I got them all cut!","My wife is really mad at the fact that I have no sense of direction. So I packed up my stuff and right","How do you get a squirrel to like you? Act like a nut.","Why don't eggs tell jokes? They'd crack each other up.","I don't trust stairs. They're always up to something.","What do you call someone with no body and no nose? Nobody knows.","Did you hear the rumor about butter? Well, I'm not going to spread it!","Why couldn't the bicycle stand up by itself? It was two tired.","Dad, can you put my shoes on? No, I don't think they'll fit me.","Why can't a nose be 12 inches long? Because then it would be a foot.","This graveyard looks overcrowded. People must be dying to get in.","Dad, can you put the cat out? I didn't know it was on fire.","What time did the man go to the dentist? Tooth hurt-y.","How many tickles does it take to make an octopus laugh? Ten tickles.","What concert costs just 45 cents? 50 Cent featuring Nickelback!","How do you make a tissue dance? You put a little boogie in it.","Why did the math book look so sad? Because of all of its problems!","What do you call cheese that isn't yours? Nacho cheese.","What kind of shoes do ninjas wear? Sneakers!","How does a penguin build its house? Igloos it together.","Why did the scarecrow win an award? Because he was outstanding in his field.","I made a pencil with two erasers. It was pointless.","How do you make a Kleenex dance? Put a little boogie in it!","I'm reading a book about anti-gravity. It's impossible to put down!","Did you hear about the guy who invented the knock-knock joke? He won the 'no-bell' prize.","I've got a great joke about construction, but I'm still working on it.","I used to hate facial hair...but then it grew on me.","I decided to sell my vacuum cleaner—it was just gathering dust!","I had a neck brace fitted years ago and I've never looked back since.","You know, people say they pick their nose, but I feel like I was just born with mine.","What's brown and sticky? A stick.","Why can't you hear a psychiatrist using the bathroom? Because the 'P' is silent.","What do you call an elephant that doesn't matter? An irrelephant.","What do you get from a pampered cow? Spoiled milk.","I like telling Dad jokes. Sometimes he laughs!","Did I tell you the time I fell in love during a backflip? I was heels over head!","If a child refuses to sleep during nap time, are they guilty of resisting a rest?","I ordered a chicken and an egg online. I’ll let you know.","It takes guts to be an organ donor.","If you see a crime at an Apple Store, does that make you an iWitness?","I'm so good at sleeping, I can do it with my eyes closed!","It's inappropriate to make a 'dad joke' if you're not a dad. It's a faux pa.","Did you hear about the circus fire? It was in tents.","Can February March? No, but April May!","How do lawyers say goodbye? We'll be suing ya!","Wanna hear a joke about paper? Never mind—it's tearable.","What's the best way to watch a fly fishing tournament? Live stream.","Spring is here! I got so excited I wet my plants.","I could tell a joke about pizza, but it's a little cheesy.","Don't trust atoms. They make up everything!","When does a joke become a dad joke? When it becomes apparent.","I wouldn't buy anything with velcro. It's a total rip-off.","What’s an astronaut’s favorite part of a computer? The space bar.","I don't play soccer because I enjoy the sport. I'm just doing it for kicks!","Why are elevator jokes so classic and good? They work on many levels.","Why do bees have sticky hair? Because they use a honeycomb.","What do you call a fake noodle? An impasta.","Which state has the most streets? Rhode Island.","What did the coffee report to the police? A mugging."],[1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400,1400]]
+
+//var jokes = [["Joke1","Joke 2","Joke 3"],[1400,1400,1400]]
+var table2 = []
+
+
+function checkJoke(jokematch) {
+  return jokematch == document.getElementById("joke1").innerHTML;
+}
+
+function checkJoke2(jokematch2) {
+  return jokematch2 == document.getElementById("joke2").innerHTML;
+}
+
+function clearTable() {
+  table2 = [];
+}
+
+function myFunction() {
+
+  var x = document.getElementById("joke1");
+  var y = document.getElementById("joke2");
+  var a = document.getElementById("prev1");
+  var b = document.getElementById("prev2");
+  var c = document.getElementById("winner");
+
+  //Get current i for jokes on screen
+  var i1_prev = jokes[0].findIndex(checkJoke);
+  var i2_prev = jokes[0].findIndex(checkJoke2);
+  var joke1_prev = x.innerHTML;
+  var joke2_prev = y.innerHTML;
+  var elo1_prev = jokes[1][i1_prev];
+  var elo2_prev = jokes[1][i2_prev];
+
+  table2.push(x.innerHTML)    
+  
+  a.innerHTML = joke1_prev + "<br />" + "<br />" + "Previous ELO = " + (elo1_prev*1).toFixed(0);
+  b.innerHTML = joke2_prev + "<br />" + "<br />" + "Previous ELO = " + (elo2_prev*1).toFixed(0);
+  c.innerHTML = "Winner <-"
+
+  //Adjust Score
+  var delta1 = 32 * (1 - (1/(1+10**((elo1_prev-elo2_prev)/400))));
+  var delta2 = 32 * (0 - (1/(1+10**((elo1_prev-elo2_prev)/400))));
+  
+  jokes[1][i1_prev] = jokes[1][i1_prev] + delta1; 
+  jokes[1][i2_prev] = jokes[1][i2_prev] + delta2; 
+
+  a.innerHTML = a.innerHTML + "<br />" + "<br />" + "New ELO: " + jokes[1][i1_prev].toFixed(1)+ "<br />" + "<br />" + "Change: +" + delta1.toFixed(1);
+  b.innerHTML = b.innerHTML + "<br />" + "<br />" + "New ELO: " + jokes[1][i2_prev].toFixed(1)+ "<br />" + "<br />" + "Change: " + delta2.toFixed(1);
+  
+  //Randomize for new matchup
+  var i1 = Math.floor(Math.random() * jokes[0].length);
+  var i2 = Math.floor(Math.random() * jokes[0].length);
+  
+  var joke1 = jokes[0][i1];
+  var joke2 = jokes[0][i2];
+    
+  if (x.innerHTML === y.innerHTML) {
+    var i2 = Math.floor(Math.random() * jokes[0].length)
+    var joke2 = jokes[0][i2];
+  } else {
+	x.innerHTML = joke1;
+	y.innerHTML = joke2;
+  }
+  x.innerHTML = joke1;
+  y.innerHTML = joke2;
+   
+
+}
+
+
+function myFunction2() {
+
+  var x = document.getElementById("joke1");
+  var y = document.getElementById("joke2");
+  var a = document.getElementById("prev1");
+  var b = document.getElementById("prev2");
+  var c = document.getElementById("winner");
+
+  //Get current i for jokes on screen
+  var i1_prev = jokes[0].findIndex(checkJoke);
+  var i2_prev = jokes[0].findIndex(checkJoke2);
+  var joke1_prev = x.innerHTML;
+  var joke2_prev = y.innerHTML;
+  var elo1_prev = jokes[1][i1_prev];
+  var elo2_prev = jokes[1][i2_prev];
+
+  table2.push(y.innerHTML)   
+  
+  a.innerHTML = joke1_prev + "<br />" + "<br />" + "Previous ELO = " + (elo1_prev*1).toFixed(0);
+  b.innerHTML = joke2_prev + "<br />" + "<br />" + "Previous ELO = " + (elo2_prev*1).toFixed(0);
+  c.innerHTML = "Winner ->"
+
+  //Adjust Score
+  var delta1 = 32 * (0 - (1/(1+10**((elo1_prev-elo2_prev)/400))));
+  var delta2 = 32 * (1 - (1/(1+10**((elo1_prev-elo2_prev)/400))));
+  
+  jokes[1][i1_prev] = jokes[1][i1_prev] + delta1; 
+  jokes[1][i2_prev] = jokes[1][i2_prev] + delta2; 
+
+  a.innerHTML = a.innerHTML + "<br />" + "<br />" + "New ELO: " + jokes[1][i1_prev].toFixed(1)+ "<br />" + "<br />" + "Change: " + delta1.toFixed(1);
+  b.innerHTML = b.innerHTML + "<br />" + "<br />" + "New ELO: " + jokes[1][i2_prev].toFixed(1)+ "<br />" + "<br />" + "Change: +" + delta2.toFixed(1);
+  
+  //Randomize for new matchup
+  var i1 = Math.floor(Math.random() * jokes[0].length);
+  var i2 = Math.floor(Math.random() * jokes[0].length);
+  
+  var joke1 = jokes[0][i1];
+  var joke2 = jokes[0][i2];
+    
+  if (x.innerHTML === y.innerHTML) {
+    var i2 = Math.floor(Math.random() * jokes[0].length)
+    var joke2 = jokes[0][i2];
+  } else {
+	x.innerHTML = joke1;
+	y.innerHTML = joke2;
+  }
+  x.innerHTML = joke1;
+  y.innerHTML = joke2;
+}
+
+
+function startup() {
+
+  var x = document.getElementById("joke1");
+  var y = document.getElementById("joke2");
+  var a = document.getElementById("prev1");
+  var b = document.getElementById("prev2");
+  var c = document.getElementById("winner");
+
+  
+  //Randomize for new matchup
+  var i1 = Math.floor(Math.random() * jokes[0].length);
+  var i2 = Math.floor(Math.random() * jokes[0].length);
+  
+  var joke1 = jokes[0][i1];
+  var joke2 = jokes[0][i2];
+    
+  if (x.innerHTML === y.innerHTML) {
+    var i2 = Math.floor(Math.random() * jokes[0].length)
+    var joke2 = jokes[0][i2];
+  } else {
+	x.innerHTML = joke1;
+	y.innerHTML = joke2;
+  }
+  x.innerHTML = joke1;
+  y.innerHTML = joke2;
+}
+
+
+
+
+window.addEventListener("click", function(){
+  // Dummy Array
+  var data = table2;
+  // Draw HTML table
+  var perrow = 1, // 3 cells per row
+      html = "<table><tr>";
+
+  // Loop through array and add table cells
+  for (var i=0; i<data.length; i++) {
+    html += "<td>" + data[i] + "</td>";
+
+    // If you need to click on the cell and do something
+    // html += "<td onclick='FUNCTION()'>" + data[i] + "</td>";
+ 
+    // Break into next row
+    var next = i+1;
+    if (next%perrow==0 && next!=data.length) {
+      html += "</tr><tr>";
+    }
+  }
+  html += "</tr></table>";
+
+  // Attach HTML to container
+  document.getElementById("container").innerHTML = html;
+});
+
+
+window.onload = startup;
+</script>
+
+
+<footer>
+  <p>&copy; Copyright 2020 by <a href="https://www.ScionLi.com" target="_blank">Scion Li</a></p>
+</footer>
+
+</body>
+</html>
