@@ -1,2 +1,0 @@
-# quipmash
-QuipMash
